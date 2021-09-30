@@ -22,7 +22,7 @@ def time(update, context):
         ])
     )
 
-def textCalllBack(update, context):
+def textCallBack(update, context):
         query = update.callback_query
         query.answer()
 
@@ -51,11 +51,11 @@ if __name__ == '__main__':
 
     dp.add_handler(ConversationHandler(
         entry_points=[CommandHandler('time', time),
-        CallbackQueryHandler(textCalllBack)
+        CallbackQueryHandler(textCallBack)
         ],
 
         states={
-            INPUT_TEXT: [MessageHandler(Filters.text, textCalllBack)]
+            INPUT_TEXT: [MessageHandler(Filters.text, textCallBack)]
         },
 
         fallbacks=[CommandHandler('cancel', time)]
